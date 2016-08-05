@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta http-equiv="X-UA-Compatible" content="IE=edeg,chorme=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scable=no">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="email=no">
+		<title>遮罩层弹框</title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#btn{
+					width: 80%;
+					height: 40px;
+					color: #fff;
+					font-size: 16px;
+					line-height: 40px;
+					margin: 0 auto;
+					outline: none;
+					font-weight: bold;
+					background: orange;
+					border-radius: 10px;
+					position: relative;
+			}
+			#btn span{
+						display: inline-block;
+						width:0;
+						height:0;
+						border: transparent;
+						background: red;
+						position: absolute;
+						top: 0;
+						left: 0;
+			}
+			#zhezhao{
+						width: 100%;
+						height: 100%;
+						position: absolute;
+						top: 0;
+						left: 0;
+						-webkit-transform: translate3d(0,100%,0);
+			}
+			#bg{
+					width: 100%;
+					height: 100%;
+					position:absolute;
+					left:0;
+					top:0;
+					background: rgba(0,0,0,0.4);
+			}
+			#tishi{
+						width: 75%;
+						height: auto;
+						padding: 20px;
+						margin: 40% auto;
+						background: skyblue;
+						position: relative;
+			}
+			#tishi h2{
+						width: 100%;
+						height: 30px;
+						line-height: 30px;
+						padding-bottom: 3px;
+						text-align: center;
+						border-bottom: 1px solid #616161;
+			}
+			#tishi h2 span{
+							display: inline-block;
+							width: 30px;
+							height: 30px;
+							/*float: right;*/
+							position: absolute;
+							top: 0;
+							right: 0;
+							font-size: 20px;
+							line-height: 30px;
+							text-align: center;
+							font-weight: bolder;
+			}
+			#tishi p{
+						line-height: 120px;
+						color: #fff;
+						font-size: 30px;
+						text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="btn">确认提交<span></span></button>
+		<div id="zhezhao">
+			<div id="bg"></div>
+			<div id="tishi">
+				<h2>提示<span id="error">×</span></h2>
+				<p>准备就绪...</p>
+			</div>
+		</div>
+		<script>
+			 btn.onclick=function(){
+				zhezhao.style["-webkit-transform"]="translate3d(0,0,0)";
+				zhezhao.style["-webkit-transition"]="transform 1s ease";
+				btn.style.display="none";
+			}
+			error.onclick=function(){
+				this.style.background="red";
+				this.style.color="#fff";
+				zhezhao.style["-webkit-transform"]="translate3d(0,-100%,0)";
+				zhezhao.style["-webkit-transition"]="transform 1s ease";
+				btn.style.display="block";
+			}
+		</script>
+	</body>
+</html>
